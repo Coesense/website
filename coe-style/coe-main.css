@@ -106,6 +106,10 @@ html, body { height: 100%; }
 
 a { color: inherit; text-decoration: none; }
 
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
 /*
 *	MAIN
 */
@@ -243,6 +247,8 @@ a { color: inherit; text-decoration: none; }
 	#coe-main_content {
 		padding-top: 70px;
 	}
+
+		#coe-main_content .element { width: 225px; height: 300px; background-color: #0FF; }
 
 	footer {
 		position: fixed;
