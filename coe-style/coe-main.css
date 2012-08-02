@@ -106,9 +106,33 @@ html, body { height: 100%; }
 
 a { color: inherit; text-decoration: none; }
 
+h1 {
+	font-weight: normal;
+	font-style: normal;
+	font-size: 12px;
+	color: #3d3d3d;
+	margin-bottom: 5px;
+}
+
 .clearfix:before, .clearfix:after { content: ""; display: table; }
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }
+
+/*
+*	UI
+*/
+
+.coe-ui_heart {
+	display: block;
+	width: 16px; height: 12px;
+	background: url('../coe-assets/img/heart.png');
+}
+
+.coe-ui_view {
+	display: block;
+	width: 16px; height: 12px;
+	background: url('../coe-assets/img/view.png');
+}
 
 /*
 *	MAIN
@@ -116,6 +140,7 @@ a { color: inherit; text-decoration: none; }
 
 #coe-main {
 	height: 100%;
+	overflow: hidden;
 	font-family: Helvetica, "Helvetica Neue", "Helvetica-Neue", Arial, sans-serif;
 	position: relative;
 	background: url('../coe-assets/img/coe-main.png') repeat;
@@ -246,13 +271,102 @@ a { color: inherit; text-decoration: none; }
 
 	#coe-main_content {
 		padding-top: 70px;
+		height: 100%;
+		font-family: 'powdah', Helvetica, "Helvetica Neue", "Helvetica-Neue", Arial, sans-serif;
+		font-size: 12px;
+		color: #3d3d3d;
 	}
 
-		#coe-main_content .element { width: 225px; height: 300px; background-color: #0FF; }
+		#coe-main_feed { height: 100%; padding: 5px 44px; }
+
+			.coe-main_item-image { height: 132px; }
+
+			.coe-main_item-infos { 
+				padding: 10px;
+				border-top: 1px solid #FFF;
+				background: #e5e5e5;
+				background: -moz-linear-gradient(top,  #e5e5e5 1%, #ffffff 23%);
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#e5e5e5), color-stop(23%,#ffffff));
+				background: -webkit-linear-gradient(top,  #e5e5e5 1%,#ffffff 23%);
+				background: -o-linear-gradient(top,  #e5e5e5 1%,#ffffff 23%);
+				background: -ms-linear-gradient(top,  #e5e5e5 1%,#ffffff 23%);
+				background: linear-gradient(to bottom,  #e5e5e5 1%,#ffffff 23%);
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', endColorstr='#ffffff',GradientType=0 );
+
+			}
+
+				.coe-main_item-infos_source { font-size: 10px; margin-bottom: 20px; }
+
+				.coe-main_item-infos_tags { color: #086e80; max-width: 170px; }
+
+					.coe-main_item-infos_tags li { display: inline-block; }
+
+					.coe-main_item-infos_tags li:not(:last-child):after {
+						content: ",";
+					}
+
+			.coe-main_item-more {
+				position: absolute;
+				width: 24px;
+				height: 35px;
+				bottom: 10px;
+				right: 10px;
+			}
+
+				.coe-main_item-more span { margin: 0 auto; }
+
+				.coe-main_item-more .coe-ui_heart { margin-bottom: 11px; }
+
+		#coe-main_content .coe-main_feed-item { 
+			width: 225px;
+			background-color: #FFF;
+			float: left;
+			overflow: hidden;
+			position: relative;
+			margin: 10px 16px;
+			-webkit-box-shadow: 0 4px 7px 2px rgba(0,0,0,0.6);
+			-moz-box-shadow: 0 4px 7px 2px rgba(0,0,0,0.6);
+			box-shadow: 0 4px 7px 2px rgba(0,0,0,0.6);
+		}
+
+		.isotope-item {
+			z-index: 2;
+		}
+
+		.isotope-hidden.isotope-item {
+			pointer-events: none;
+			z-index: 1;
+		}
+
+		.isotope,
+		.isotope .isotope-item {
+		  -webkit-transition-duration: 0.8s;
+		     -moz-transition-duration: 0.8s;
+		      -ms-transition-duration: 0.8s;
+		       -o-transition-duration: 0.8s;
+		          transition-duration: 0.8s;
+		}
+
+		.isotope {
+		  -webkit-transition-property: height, width;
+		     -moz-transition-property: height, width;
+		      -ms-transition-property: height, width;
+		       -o-transition-property: height, width;
+		          transition-property: height, width;
+		}
+
+		.isotope .isotope-item {
+		  -webkit-transition-property: -webkit-transform, opacity;
+		     -moz-transition-property:    -moz-transform, opacity;
+		      -ms-transition-property:     -ms-transform, opacity;
+		       -o-transition-property:         top, left, opacity;
+		          transition-property:         transform, opacity;
+		}
 
 	footer {
 		position: fixed;
 		bottom: 0; left: 0;
+		z-index: 1337;
 		width: 100%; height: 51px;
 		background: url('../coe-assets/img/coe-footer.png') repeat-x;
 		-moz-box-shadow: 0px -2px 3px rgba(10, 10, 10, .5);
