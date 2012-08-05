@@ -10,6 +10,7 @@
 	<meta http-equiv="Content-Language" content="fr" />
 	<link type="text/css" rel="stylesheet" media="screen" href="coe-style/coe-main.css" />
 	<script type="text/javascript" src="coe-script/lib/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="coe-script/lib/jquery.easing.js"></script>
 	<script type="text/javascript" src="coe-script/lib/jquery.isotope.min.js"></script>
 	<script type="text/javascript" src="coe-script/Coesense.js"></script> 
 	<script type="text/javascript" src="coe-script/coe-main.js"></script>
@@ -32,7 +33,15 @@
 				<div id="coe-header_pixel"></div>
 			</div>
 		</header>
+		<div id="coe-ui_overlay"></div>
 		<div id="coe-main_content">
+			<div id="coe-main_single">
+				<a href="#" id="coe-main_single-close">X</a>
+				<div id="coe-main_single-wrapper">
+					<p class="description"></p>
+				</div>
+				<a href="#">SHARE THAT ON FACEBOOK TWITTER STUMBLE</a>
+			</div>
 			<div id="coe-main_feed" class="clearfix">
 				<article class="coe-main_feed-item" data-category="" data-id="1">
 					<div class="coe-main_item-image"><img src="coe-content/figure.jpg" alt="figure" /></div>
@@ -400,11 +409,11 @@
 		<footer>
 			<nav id="coe-footer_nav">
 				<ul>
-					<li><a href="#contact">contact</a></li>
+					<li><a href="#work">work</a></li>
 					<li><a href="#team">team</a></li>
 					<li><a href="#feed">feed</a><span id="feed_overlay"></span></li>
-					<li><a href="#work">work</a></li>
 					<li><a href="#schedule">schedule</a></li>
+					<li><a href="#contact">contact</a></li>
 				</ul>
 			</nav>
 		</footer>
