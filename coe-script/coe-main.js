@@ -1,6 +1,6 @@
 var c;
 
 $(window).load(function(){
-	c = new Coesense();
+	//c = new Coesense();
 
 });

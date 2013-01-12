@@ -1,10 +1,41 @@
-function Coesense(){
+(function(){
+
+window.Article = Backbone.Model.extend({
+
+	defaults: {
+		img 		: 'coe-content/devrocket.jpg',
+		title 		: 'Title',
+		source 		: 'Source',
+		description : 'Description',
+		tags 		: ['tag1', 'tag2']
+	},
+
+	initialize : function Article() {
+
+        console.log('Article Constructor');
+
+        this.url = "coe-library/model.php"+"?id="+this.id,
+
+        this.bind("error", function(model, error){
+            console.log( error );
+        });
+
+    }
+});
+
+window.article = new Article({});
+
+})();
+
+/*window.Coesense = function(){
 	this.$container = $('#coe-main_feed');
 	this.init();
 }
 
 Coesense.prototype.init = function(){
 	var _self = this;
+
+	var article = Backbone.Model.extend({});
 
 	//feed setup
 	this.$container.isotope({
@@ -74,4 +105,5 @@ Coesense.prototype.loadSingle = function($this){
 			$("#coe-main_single-wrapper").fadeIn("fast");
 		});
 	});
-}
+}*/
+
