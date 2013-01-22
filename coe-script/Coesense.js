@@ -1,20 +1,22 @@
-(function(){
+(function() {
 
 window.Article = Backbone.Model.extend({
 
-	defaults: {
-		img 		: 'coe-content/devrocket.jpg',
-		title 		: 'Title',
-		source 		: 'Source',
-		description : 'Description',
-		tags 		: ['tag1', 'tag2']
+	'urlRoot': '/',
+
+	'defaults': {
+		'img' 			: 'coe-content/devrocket.jpg',
+		'title' 		: 'Title',
+		'source' 		: 'Source',
+		'description' 	: 'Description',
+		'tags' 			: ['tag1', 'tag2']
 	},
 
-	initialize : function Article() {
+	'initialize': function Article() {
 
         console.log('Article Constructor');
 
-        this.url = "coe-library/model.php"+"?id="+this.id,
+        //this.url = "coe-library/model.php"+"?id="+this.id,
 
         this.bind("error", function(model, error){
             console.log( error );
@@ -23,9 +25,10 @@ window.Article = Backbone.Model.extend({
     }
 });
 
-window.article = new Article({});
+var article = new Article({id: 1});
+article.fetch();
 
-})();
+})(window);
 
 /*window.Coesense = function(){
 	this.$container = $('#coe-main_feed');
